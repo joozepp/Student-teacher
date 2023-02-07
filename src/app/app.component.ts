@@ -20,7 +20,7 @@ export class AppComponent {
   subjects: string[] = ['Maths','Economics','Programming','Sports','Dancing','Golf','Mining','Literature','Crafting','Knitting','Arts','Swimming','Cooking'];
 
   studentAges: number = Math.floor(Math.random() *(+30 - +16)) + +16;
-  teacherAges: number= Math.random()*(23-65);
+  teacherAges: number= Math.floor(Math.random() *(+65 - +30)) + +30;
 
   addStudentToTable() {
     let studentFirstName = this.firstNames.at(Math.random()*this.firstNames.length);
@@ -55,7 +55,7 @@ export class AppComponent {
     let teacherFirstName = this.firstNames.at(Math.random()*this.firstNames.length);
     let teacherLastName = this.lastNames.at(Math.random()*this.lastNames.length);
     let teacherSubject = this.subjects.at(Math.random()*this.subjects.length);
-    let teacherAge = this.studentAges;
+    let teacherAge = this.teacherAges;
     let table: HTMLTableElement = <HTMLTableElement> document.getElementById("teacher-table");
     let row = table.insertRow(1);
     let cell1 = row.insertCell(0);
